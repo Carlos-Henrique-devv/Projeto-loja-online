@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    height: 600px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 80px;
+    font-size: 28px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.bnt-link-cadastro {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        color: #667eea;
+        text-decoration: none;
+        border: 2px solid #667eea;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s;
+        cursor: pointer;
+}
+
+.bnt-link-cadastro:hover {
+        background: #667eea;
+        color: white;
+        transform: translateY(-2px);
+}
+
+.error-message {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}

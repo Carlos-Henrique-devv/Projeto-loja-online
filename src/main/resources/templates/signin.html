@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" th:href="@{/css/signin.css}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Signin</h2>
+
+        <div class="error-message" id="errorMessage">
+            Email ou senha inválidos
+        </div>
+
+        <form action="">
+            <div class="form-group">
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="email"
+                    placeholder="Email"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group">
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="senha"
+                    placeholder="Password"
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <a class="bnt-link-cadastro" th:href="@{/cadastro}">não tem conta? Faça o cadastro</a>
+    </div>
+
+    <script th:src="@{/js/signin.js}"></script>
+</body>
+</html>

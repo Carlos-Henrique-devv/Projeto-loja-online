@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+    <title>Authentication</title>
+</head>
+<body>
+    <form method="post" action="/auth">
+        <h2>authentication</h2>
+        <input type="text" name="username" placeholder="User" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
