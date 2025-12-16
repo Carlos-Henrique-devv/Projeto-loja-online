@@ -1,7 +1,229 @@
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'destaque';
+    src: url(fontes/Lovalina\ Regular.otf);
 }
 
-h2 {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --cor-fundo: #d1cfcf;
+    --cor-segundaria: #937038;
+
+    --font-destaque: 'destaque';
+    --font-secundaria: Arial;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: var(--font-secundaria);
+}
+
+
+.container header {
+    min-width: 100vh;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container header .header-top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 50px;
+    min-width: 100vh;
+}
+
+.container header .header-logo {
+    width: 50px;
+    height: 50px;;
+}
+
+
+.container header nav {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.container header nav a{
+    color: var(--cor-segundaria);
+    text-decoration: none;
+    border: 1px solid var(--cor-segundaria);
+    border-radius: 4px;
+    padding: 5px 12px;
+    margin-top: 10px;
+}
+
+.container header nav a:hover {
+    transition: 0.3s;
+    color: rgba(147, 112, 56, 0.5);
+    border: 1px solid rgba(147, 112, 56, 0.5);
+}
+
+header .header-image-container {
+    height: 300px;
+    position: relative;
+    display: inline-block;
+}
+
+header .header-image-container img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+header .header-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+}
+
+main div h2 {
+    color: var(--cor-segundaria);
+    text-align: center;
+    color: var(--cor-segundaria);
+    padding-top: 20px;
+    font-size: 1.9em;
+    cursor: pointer;
+}
+
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0px;
+}
+
+.menu-container .menu-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    height: 350px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: #cfcccc solid 1px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-container .menu-item:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.menu-container .menu-item img {
+    max-width: 250px;
+    width: 90%;
+    min-height: 250px;
+    border-radius: 5px;
+}
+
+.menu-item .menu-item-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu-container .menu-item button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    background-color: var(--cor-segundaria);
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-container .menu-item button:hover {
+    border: 1px solid var(--cor-segundaria);
+    background-color: var(--cor-fundo);
+    color: var(--cor-segundaria);
+    transition: 0.3;
+}
+
+.about-container {
+    margin-top: 10px;
+    min-width: 100vh;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
+
+.about-container h2 {
+    color: var(--cor-segundaria);
+    font-size: 1.9em;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.about-container img {
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+    position: absolute;
+    min-width: 500px;
+    margin-top: 100px;
+}
+
+.about-text h2, p {
+    color: black;
+}
+
+footer {
+    background-color: var(--cor-segundaria);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    border-radius: 5px 0 0 0;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+

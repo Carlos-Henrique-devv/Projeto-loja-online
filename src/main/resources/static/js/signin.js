@@ -18,31 +18,32 @@ function signin() {
     })
     .then(function (res) {
         if (res.ok) {
-            console.log("Login realizado com sucesso!");
             window.location.href = "/home";
-        } else {
-            console.log("Erro no login:", res);
-            mostrarErro();
+            return res.json();
         }
-        return;
+    })
+    .then(function (data) {
+        if(data.token) {
+            localStorage.setItem("token", data.token);
+        }
     })
     .catch(function (error) {
         console.log("Erro na requisição:", error);
         mostrarErro();
-    });
-}
+    })
+};
 
 function mostrarErro() {
     errorMessage.classList.add('show');
     setTimeout(function() {
         errorMessage.classList.remove('show');
-    }, 3000);
-}
+    }, 3000)
+};
 
 function limparCampos() {
     Iemail.value = "";
     Isenha.value = "";
-}
+};
 
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();

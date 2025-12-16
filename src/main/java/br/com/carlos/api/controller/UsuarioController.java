@@ -2,6 +2,9 @@ package br.com.carlos.api.controller;
 
 import br.com.carlos.api.dto.LoginRequest;
 import br.com.carlos.api.model.Usuario;
+import br.com.carlos.api.repository.IUsuario;
+import br.com.carlos.api.security.Token;
+import br.com.carlos.api.security.TokenUtil;
 import br.com.carlos.api.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -23,14 +27,17 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private IUsuario iUsuario;
+
     @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuario() {
+    public ResponseEntity<List<Usuario>> getUsuarios() {
         return ResponseEntity.status(200).body(usuarioService.listarUsuario());
     }
 
     @PostMapping
     public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario) {
-        return ResponseEntity.status(201).body(usuarioService.salvaUsuario(usuario));
+        return ResponseEntity.ok(usuarioService.salvaUsuario(usuario));
     }
 
     @PutMapping
@@ -52,6 +59,7 @@ public class UsuarioController {
     @PostMapping("/signin")
     public ResponseEntity<?> validarSenha(@Valid @RequestBody LoginRequest loginRequest) {
         Boolean valid = usuarioService.validarSenha(loginRequest);
+        Optional<Usuario> optFindByEmail = iUsuario.findByEmail(loginRequest.getEmail());
 
         if (!valid) {
             Map<String, String> error = new HashMap<>();
@@ -59,9 +67,11 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
         }
 
-        Map<String, String> sucess = new HashMap<>();
-        sucess.put("Messagem", "Login realizado com sucesso!");
-        return ResponseEntity.status(200).body(sucess);
+        Usuario usuario = optFindByEmail.get();
+        String createToken = TokenUtil.createToken(usuario);
+        Token token = new Token(createToken);
+
+        return ResponseEntity.ok(token);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

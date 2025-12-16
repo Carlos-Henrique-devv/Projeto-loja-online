@@ -8,8 +8,9 @@
 <body>
     <form method="post" action="/auth">
         <h2>authentication</h2>
-        <input type="text" name="username" placeholder="User" required>
-        <input type="password" name="password" placeholder="Senha" required>
+
+        <input type="text" name="username" placeholder="User" required autocomplete="text">
+        <input type="password" name="password" placeholder="Senha" required autocomplete="current-password">
         <button type="submit">Entrar</button>
     </form>
 </body>

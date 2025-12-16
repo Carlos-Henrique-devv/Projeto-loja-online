@@ -18,6 +18,7 @@ public class SecurityConfig {
 
                         .requestMatchers(HttpMethod.GET, "/usuarios").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/usuarios/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/usuarios").authenticated()
 
                         .anyRequest().permitAll())
 

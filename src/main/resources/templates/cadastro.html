@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/cadastro.css}">
     <title>Cadastro</title>
 </head>
-
 <body>
-<div class="box">
-    <h2>Cadastro</h2>
-    <form >
-        <input type="text" class="nome" name="nome" placeholder="Name">
-        <input type="text" class="username" name="username" placeholder="User name">
-        <input type="text" class="email" name="email" placeholder="Email">
-        <input type="text" class="senha" name="senha" placeholder="Password">
-        <input type="text" class="telefone" name="tel" placeholder="Telefone">
-        <button>Cadastrar</button>
-    </form>
-    <a th:href="@{/signin}" class="btn-link">Já tem conta? Faça login</a>
-</div>
+    <div class="box">
+        <h2>Cadastro</h2>
+
+        <div class="error-message" id="errorMessage">
+            Email ou nome de usuario já existe/telefone.
+        </div>
+
+        <form>
+            <input type="text" class="nome" name="nome" placeholder="Nome">
+            <input type="text" class="sobrenome" name="sobrenome" placeholder="Sobre nome">
+            <input type="text" class="username" name="username" placeholder="Nome de usuario">
+            <input type="email" class="email" name="email" placeholder="Email">
+            <input type="password" class="senha" name="senha" placeholder="Senha">
+            <input type="tel" class="telefone" name="tel" placeholder="Telefone">
+
+            <button>Cadastrar</button>
+        </form>
+        <a th:href="@{/signin}" class="btn-link">Já tem conta? Faça login</a>
+    </div>
 
 <script th:src="@{/js/cadastro.js}"></script>
-
 </body>
-
 </html>

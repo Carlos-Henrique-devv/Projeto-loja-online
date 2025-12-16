@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cor-fundo: #d1cfcf;
+    --cor-segundaria: #937038;
+
+    --font-destaque: 'destaque';
+    --font-secundaria: Arial;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--cor-fundo);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,19 +43,26 @@ h2 {
     font-size: 28px;
 }
 
+.error-message {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
 form {
     width: 100%;
 }
 
 .form-group {
     margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-    font-weight: 500;
 }
 
 input[type="email"],
@@ -63,13 +78,13 @@ input[type="password"] {
 input[type="email"]:focus,
 input[type="password"]:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--cor-segundaria);
 }
 
 button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--cor-segundaria);
     color: white;
     border: none;
     border-radius: 5px;
@@ -94,9 +109,9 @@ button:active {
         width: 100%;
         text-align: center;
         background: transparent;
-        color: #667eea;
+        color: var(--cor-segundaria);
         text-decoration: none;
-        border: 2px solid #667eea;
+        border: 2px solid var(--cor-segundaria);
         border-radius: 5px;
         font-size: 16px;
         font-weight: 600;
@@ -105,21 +120,7 @@ button:active {
 }
 
 .bnt-link-cadastro:hover {
-        background: #667eea;
+        background: var(--cor-segundaria);
         color: white;
         transform: translateY(-2px);
-}
-
-.error-message {
-    background: #fee;
-    color: #c33;
-    padding: 12px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    border-left: 4px solid #c33;
-    display: none;
-}
-
-.error-message.show {
-    display: block;
 }
