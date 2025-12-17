@@ -97,7 +97,7 @@ src/
     git clone https://github.com/Carlos-Henrique-devv/Projeto-loja-online.git
     cd Projeto-loja-online
    
-Tem que criar um banco mysql com o nome "projeto-api", sim você já tem esse banco com esse nome tem que criar outro banco com outro nome e mudar no "application.properties".  
+Tem que criar um banco mysql com o nome "projeto_api", sim você já tem esse banco com esse nome tem que criar outro banco com outro nome e mudar no "application.properties".  
 vamos te as tabelas usuario, auth, roles e auth_roles, vou mostra como criar as tabelas logo abaixo.  
 
    ```
