@@ -27,14 +27,13 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
 ## 📂 Estrutura do projeto
 
    ```
-      src
+   src/
    ├── main
    │   ├── java
    │   │   └── br
    │   │       └── com
    │   │           └── carlos
    │   │               └── api
-   │   │                   ├── ProjetoApiMotoCodeApplication.java
    │   │                   ├── controller
    │   │                   │   ├── AppController.java
    │   │                   │   └── UsuarioController.java
@@ -44,6 +43,7 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
    │   │                   │   ├── Role.java
    │   │                   │   ├── UserAuth.java
    │   │                   │   └── Usuario.java
+   │   │                   ├── ProjetoApiApplication.java
    │   │                   ├── repository
    │   │                   │   ├── IRole.java
    │   │                   │   ├── IUserAuth.java
@@ -89,6 +89,7 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
                    └── carlos
                        └── api
                            └── ProjetoApiMotoCodeApplicationTests.java
+
                            
    ```
 
