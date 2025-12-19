@@ -34,6 +34,7 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
    │   │       └── com
    │   │           └── carlos
    │   │               └── api
+   │   │                   ├── ProjetoApiApplication.java
    │   │                   ├── controller
    │   │                   │   ├── AppController.java
    │   │                   │   └── UsuarioController.java
@@ -43,7 +44,6 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
    │   │                   │   ├── Role.java
    │   │                   │   ├── UserAuth.java
    │   │                   │   └── Usuario.java
-   │   │                   ├── ProjetoApiApplication.java
    │   │                   ├── repository
    │   │                   │   ├── IRole.java
    │   │                   │   ├── IUserAuth.java
