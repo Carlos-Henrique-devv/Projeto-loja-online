@@ -2,11 +2,8 @@ package br.com.carlos.api;
 
 import br.com.carlos.api.model.Role;
 import br.com.carlos.api.model.UserAuth;
-import br.com.carlos.api.model.Usuario;
 import br.com.carlos.api.repository.IRole;
 import br.com.carlos.api.repository.IUserAuth;
-import br.com.carlos.api.repository.IUsuario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,10 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Set;
 
 @SpringBootApplication
-public class ProjetoApiMotoCodeApplication {
+public class ProjetoApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjetoApiMotoCodeApplication.class, args);
+        SpringApplication.run(ProjetoApiApplication.class, args);
     }
 
     @Bean
