@@ -28,55 +28,58 @@ Também vamos usar **Thymeleaf** para retornar nossos templates, e o controle de
 
 src/
 └── main/
-└── java/
-└── br/com/carlos/api/
-├── controller/
-│ ├── AppController.java
-│ └── UsuarioController.java
-├── dto/
-│ └── LoginRequest.java
-├── model/
-│ ├── Role.java
-│ ├── UserAuth.java
-│ └── Usuario.java
-├── repository/
-│ ├── IRole.java
-│ ├── IUserAuth.java
-│ └── IUsuario.java
-├── security/
-│ ├── SecurityConfig.java
-│ ├── SecurityFilter.java
-│ ├── Token.java
-│ └── TokenUtil.java
-└── service/
-└── ProjetoApiMotoCodeApplication.java
+├── java/
+│   └── br/
+│       └── com/
+│           └── carlos/
+│               └── api/
+│                   ├── controller/
+│                   │   ├── AppController.java
+│                   │   └── UsuarioController.java
+│                   ├── dto/
+│                   │   └── LoginRequest.java
+│                   ├── model/
+│                   │   ├── Role.java
+│                   │   ├── UserAuth.java
+│                   │   └── Usuario.java
+│                   ├── repository/
+│                   │   ├── IRole.java
+│                   │   ├── IUserAuth.java
+│                   │   └── IUsuario.java
+│                   ├── security/
+│                   │   ├── SecurityConfig.java
+│                   │   ├── SecurityFilter.java
+│                   │   ├── Token.java
+│                   │   └── TokenUtil.java
+│                   ├── service/
+│                   └── ProjetoApiMotoCodeApplication.java
 └── resources/
 ├── static/
-│ └── css/
-│ ├── auth.css
-│ ├── cadastro.css
-│ ├── home.css
-│ └── signin.css
-├── imgs/
-│ ├── 360_F_567611992_70X7W94aXPFkYgUzVA...
-│ ├── caixa-de-pizza.png
-│ ├── calabresa.jpg
-│ ├── frango.jpg
-│ ├── garfo1.png
-│ ├── mms.jpg
-│ ├── mussarela.jpg
-│ └── pizzagrande1.png
-├── js/
-│ ├── cadastro.js
-│ ├── home.js
-│ └── signin.js
-└── templates/
-├── auth.html
-├── cadastro.html
-├── error.html
-├── home.html
-├── signin.html
+│   ├── css/
+│   │   ├── auth.css
+│   │   ├── cadastro.css
+│   │   ├── home.css
+│   │   └── signin.css
+│   ├── imgs/
+│   │   ├── caixa-de-pizza.png
+│   │   ├── calabresa.jpg
+│   │   ├── frango.jpg
+│   │   ├── garfo1.png
+│   │   ├── mms.jpg
+│   │   ├── mussarela.jpg
+│   │   └── pizzagrande1.png
+│   └── js/
+│       ├── cadastro.js
+│       ├── home.js
+│       └── signin.js
+├── templates/
+│   ├── auth.html
+│   ├── cadastro.html
+│   ├── error.html
+│   ├── home.html
+│   └── signin.html
 └── application.properties
+
 
 ---
 
