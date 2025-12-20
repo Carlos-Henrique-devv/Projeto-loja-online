@@ -148,11 +148,11 @@ O projeto utiliza as seguintes tabelas no banco de dados:
     auth_id INT NOT NULL,
     role_id INT NOT NULL,
     PRIMARY KEY (auth_id, role_id)
-);
+    );
    ```
 
 2. Acesse a pasta do projeto com Intellij
 3. Espere baixar as dependências com Maven  
 4. Execute o projeto  
 5. Pode cadastra usuários e fazer login e só acessa as rota: localhost:8080/cadastro e fazer o cadastro depois o login na rota: localhost:8080/signin
-6. Acesse: localhost:8080/auth, Coloque no User: "admin" e na senha "Admin123" e vai ver os usuários cadastrado
+6. Acesse: localhost:8080/usuarios, Coloque no User: "admin" e na senha "Admin123" e vai ver os usuários cadastrado
