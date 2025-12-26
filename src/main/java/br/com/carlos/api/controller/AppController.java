@@ -29,7 +29,6 @@ public class AppController {
                 && !(authentication instanceof AnonymousAuthenticationToken)) {
             return "redirect:/usuarios";
         }
-
         return "auth";
     }
 
