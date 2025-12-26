@@ -40,6 +40,9 @@ Já as nossas **ROLES** são criada via CommandLineRunner e só da run no projet
 - Controle de acesso às rotas feito com base nas ROLES do usuário
 - Rotas sensíveis protegidas pelo Spring Security
 
+Este projeto retorna o token JWT na resposta de login.  
+Em aplicações de produção, recomenda-se o uso de cookies HttpOnly para armazenamento do token.
+
 ---
 
 ## 📂 Estrutura do projeto
