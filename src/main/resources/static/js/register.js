@@ -1,16 +1,17 @@
-const formulario = document.querySelector('form');
+const form = document.querySelector('form');
 
-const Inome = document.querySelector('.nome');
+const Iname = document.querySelector('.name');
 const Iusername = document.querySelector('.username');
-const Isobrenome = document.querySelector('.sobrenome');
+const Isurname = document.querySelector('.surname');
 const Iemail = document.querySelector('.email');
-const Isenha = document.querySelector('.senha');
-const Itel = document.querySelector('.telefone');
-const errorMessage = document.querySelector('.error-message');
+const Ipassword = document.querySelector('.password');
+const Iphone = document.querySelector('.phone');
 
-function cadastrar() {
+const IerrorMessage = document.querySelector('.error-message');
 
-    fetch("http://localhost:8080/usuarios",
+function register() {
+
+    fetch("http://localhost:8080/users",
         {
             headers: {
                 'Accept': 'application/json',
@@ -18,12 +19,12 @@ function cadastrar() {
             },
             method: "POST",
             body: JSON.stringify({
-                nome: Inome.value,
+                name: Iname.value,
                 username: Iusername.value,
-                sobrenome: Isobrenome.value,
+                surname: Isurname.value,
                 email: Iemail.value,
-                senha: Isenha.value,
-                telefone: Itel.value
+                password: Ipassword.value,
+                phone: Iphone.value
             })
         })
         .then(async (res) => {
@@ -34,7 +35,7 @@ function cadastrar() {
         }
 
         if (res.status === 400) {
-            mostrarErro();
+            showError();
             return;
         }
 
@@ -44,26 +45,26 @@ function cadastrar() {
         });
 };
 
-function mostrarErro() {
-    errorMessage.classList.add('show');
+function showError() {
+    IerrorMessage.classList.add('show');
     setTimeout(function() {
         errorMessage.classList.remove('show');
     }, 3000)
 };
 
-function limparCampos() {
-    Inome.value = "",
+function clearFields() {
+    Iname.value = "",
     Iusername.value = "",
-    Isobrenome.value = "",
+    Isurname.value = "",
     Iemail.value = "",
-    Isenha.value = "",
-    Itel.value = ""
+    Ipassword.value = "",
+    Iphone.value = ""
 };
 
-formulario.addEventListener('submit', function(event) {
+form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    cadastrar();
-    limparCampos();
+    register();
+    clearFields();
 });
 

@@ -8,10 +8,10 @@ import lombok.Setter;
 public class LoginRequestDto {
 
     private String email;
-    private String senha;
+    private String password;
 
-    public LoginRequestDto(String email, String senha) {
+    public LoginRequestDto(String email, String password) {
         this.email = email;
-        this.senha = senha;
+        this.password = password;
     }
 }

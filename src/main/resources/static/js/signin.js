@@ -1,11 +1,11 @@
 const formulario = document.querySelector('form');
 
 const Iemail = document.querySelector('.email');
-const Isenha = document.querySelector('.senha');
+const Ipassword = document.querySelector('.password');
 const errorMessage = document.querySelector('.error-message');
 
 function signin() {
-    fetch("http://localhost:8080/usuarios/signin", {
+    fetch("http://localhost:8080/users/signin", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ function signin() {
         method: "POST",
         body: JSON.stringify({
             email: Iemail.value,
-            senha: Isenha.value
+            password: Ipassword.value
         })
     })
     .then(async (res) => {
@@ -30,30 +30,29 @@ function signin() {
         }
 
         if (res.status === 404) {
-            return mostrarErro();
+            return showError();
         }
 
     })
     .catch(err => {
         console.error(err);
-        mostrarErro();
     });
 }
 
-function mostrarErro() {
+function showError() {
     errorMessage.classList.add('show');
     setTimeout(function() {
         errorMessage.classList.remove('show');
     }, 3000)
 };
 
-function limparCampos() {
+function clearFields() {
     Iemail.value = "";
-    Isenha.value = "";
+    Ipassword.value = "";
 };
 
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
     signin();
-    limparCampos();
+    clearFields();
 });

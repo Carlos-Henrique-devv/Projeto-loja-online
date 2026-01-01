@@ -15,30 +15,30 @@ html, body {
     font-family: 'Poppins', sans-serif;
     background: var(--cor-fundo);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-width: 100%;
     min-height: 100%;
-    padding: 0px 5px;
 }
 
-.login-container {
+.box {
     background: white;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    height: 600px;
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
 }
 
 h2 {
     text-align: center;
     color: var(--cor-segundaria);
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     font-size: 1.9rem;
     font-weight: bolder;
     cursor: pointer;
@@ -60,14 +60,13 @@ h2 {
 
 form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-input[type="email"],
-input[type="password"] {
+input {
     width: 100%;
     padding: 12px;
     border: 2px solid #e0e0e0;
@@ -76,8 +75,7 @@ input[type="password"] {
     transition: border-color 0.3s;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
+input {
     outline: none;
     border-color: var(--cor-segundaria);
 }
@@ -105,7 +103,6 @@ button:active {
 
 .bnt-link-cadastro {
         display: inline-block;
-        margin-top: 15px;
         padding: 12px;
         width: 100%;
         text-align: center;
@@ -118,10 +115,17 @@ button:active {
         font-weight: bolder;
         transition: all 0.3s;
         cursor: pointer;
+        margin-top: -7px;
 }
 
 .bnt-link-cadastro:hover {
         background: var(--cor-segundaria);
         color: white;
         transform: translateY(-2px);
+}
+
+@media(max-width: 500px) {
+    html, body {
+        padding: 0px 5px;
+    }
 }

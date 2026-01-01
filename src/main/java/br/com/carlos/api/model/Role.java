@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,7 +21,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    public Set<UserAuth> usuarios;
+    public Set<UserAuth> userAuths;
 
     public Role() {
     }

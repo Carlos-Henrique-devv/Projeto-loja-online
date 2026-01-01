@@ -19,15 +19,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
 
-        UserAuth user = iUserAuth.findByUsername(username)
+        UserAuth userAuth = iUserAuth.findByUsername(username)
                 .orElseThrow(() ->
                         new UsernameNotFoundException("Usuário não encontrado")
                 );
 
         return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                user.getSenha(),
-                user.getRoles().stream()
+                userAuth.getUsername(),
+                userAuth.getPassword(),
+                userAuth.getRoles().stream()
                         .map(role -> new SimpleGrantedAuthority(role.getName()))
                         .toList()
         );

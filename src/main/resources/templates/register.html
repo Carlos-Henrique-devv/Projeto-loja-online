@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="box">
+        <h2>Cadastro</h2>
+
+        <div class="error-message" id="errorMessage">
+            Email ou nome de user já existe/telefone.
+        </div>
+
+        <form>
+            <input type="text" class="name" name="name" placeholder="Nome (obrigatório)" required>
+            <input type="text" class="surname" name="surname" placeholder="Sobre nome (opcional)">
+            <input type="text" class="username" name="username" placeholder="Nome de user (obrigatório)" required>
+            <input type="email" class="email" name="email" placeholder="Email (obrigatório)" required>
+            <input type="password" class="password" name="password" placeholder="Senha (obrigatória)" required>
+            <input type="tel" class="phone" name="phone" placeholder="Telefone (Obrigatório)" required>
+
+            <button>Cadastrar</button>
+            
+            <a th:href="@{/signin}" class="btn-link">Já tem conta? Faça login</a>
+        </form>
+    </div>
+
+    <script th:src="@{/js/register.js}"></script>
+</body>
+</html>

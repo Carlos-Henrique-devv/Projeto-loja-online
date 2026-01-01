@@ -7,38 +7,21 @@
     <link rel="stylesheet" th:href="@{/css/signin.css}">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Signin</h2>
+    <div class="box">
+        <h2>Login</h2>
 
-        <div class="error-message" id="errorMessage">
+        <div id="errorMessage" class="error-message" >
             Email ou senha inválidos
         </div>
 
-        <form action="">
-            <div class="form-group">
-                <input
-                        type="email"
-                        id="email"
-                        class="email"
-                        placeholder="Email"
-                        required
-                >
-            </div>
+        <form>
+            <input type="email" id="email" class="email" placeholder="Email" required>
 
-            <div class="form-group">
-                <input
-                        type="password"
-                        id="password"
-                        class="senha"
-                        placeholder="Password"
-                        required
-                        autocomplete="current-password"
-                >
-            </div>
+            <input type="password" id="password" class="password" placeholder="Senha" required>
 
-            <button type="submit">Entrar</button>
+            <button>Login</button>
 
-            <a class="bnt-link-cadastro" th:href="@{/cadastro}">não tem conta? Faça o cadastro</a>
+            <a class="bnt-link-cadastro" th:href="@{/register}">não tem conta? Faça o cadastro</a>
         </form>
     </div>
 

@@ -13,9 +13,9 @@ public class AppController {
         return "home";
     }
 
-    @GetMapping("/cadastro")
+    @GetMapping("/register")
     public String cadastro() {
-        return "cadastro";
+        return "register";
     }
 
     @GetMapping("/signin")
@@ -27,7 +27,7 @@ public class AppController {
     public String loginPage(Authentication authentication) {
         if (authentication != null && authentication.isAuthenticated()
                 && !(authentication instanceof AnonymousAuthenticationToken)) {
-            return "redirect:/usuarios";
+            return "redirect:/users";
         }
         return "auth";
     }

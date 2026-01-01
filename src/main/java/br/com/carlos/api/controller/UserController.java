@@ -1,12 +1,12 @@
 package br.com.carlos.api.controller;
 
 import br.com.carlos.api.dto.LoginRequestDto;
-import br.com.carlos.api.dto.UsuarioDto;
-import br.com.carlos.api.model.Usuario;
-import br.com.carlos.api.repository.IUsuario;
+import br.com.carlos.api.dto.UserDto;
+import br.com.carlos.api.model.User;
+import br.com.carlos.api.repository.IUser;
 import br.com.carlos.api.token.Token;
 import br.com.carlos.api.token.TokenUtil;
-import br.com.carlos.api.service.UsuarioService;
+import br.com.carlos.api.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,44 +20,45 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/users")
 @CrossOrigin("*")
-public class UsuarioController {
+public class UserController {
 
-    private final UsuarioService usuarioService;
-    private final IUsuario iUsuario;
+    private final UserService userService;
+    private final IUser iUser;
 
-    public UsuarioController(UsuarioService usuarioService, IUsuario iUsuario) {
-        this.usuarioService = usuarioService;
-        this.iUsuario = iUsuario;
+    public UserController(UserService userService, IUser iUser) {
+        this.userService = userService;
+        this.iUser = iUser;
     }
 
+
     @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuarios() {
-        return ResponseEntity.status(200).body(usuarioService.listarUsuario());
+    public ResponseEntity<List<User>> getUsers() {
+        return ResponseEntity.status(200).body(userService.listUsers());
     }
 
     @PostMapping
-    public ResponseEntity<?> saveUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
+    public ResponseEntity<?> updateUser(@RequestBody @Valid UserDto userDto) {
         try {
-            return ResponseEntity.status(201).body(usuarioService.salvaUsuario(usuarioDto));
+            return ResponseEntity.status(201).body(userService.updateUser(userDto));
         } catch (Exception e) {
             return ResponseEntity.status(400).body("Error ao cria o usuário");
         }
     }
 
     @PutMapping
-    public ResponseEntity<?> editarUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
+    public ResponseEntity<?> toUpdate(@RequestBody @Valid UserDto userDto) {
         try {
-            return ResponseEntity.status(201).body(usuarioService.editarUsuario(usuarioDto));
+            return ResponseEntity.status(201).body(userService.toUpdateUser(userDto));
         } catch (Exception e) {
             return ResponseEntity.status(400).body("Erro ao altera o usuário");
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUsuario(@PathVariable Integer id) {
-        boolean deletado = usuarioService.excluirUsuario(id);
+    public ResponseEntity<?> deleteUser(@PathVariable Integer id) {
+        boolean deletado = userService.deleteUser(id);
 
         if (deletado) {
             return ResponseEntity.status(204).build();
@@ -67,16 +68,16 @@ public class UsuarioController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<?> validarSenha(@RequestBody LoginRequestDto loginRequestDto) {
-        Boolean valid = usuarioService.validarSenha(loginRequestDto);
-        Optional<Usuario> optFindByEmail = iUsuario.findByEmail(loginRequestDto.getEmail());
+    public ResponseEntity<?> validPassword(@RequestBody LoginRequestDto loginRequestDto) {
+        Boolean valid = userService.validPassword(loginRequestDto);
+        Optional<User> optFindByEmail = iUser.findByEmail(loginRequestDto.getEmail());
 
         if (!valid) {
             return ResponseEntity.status(404).body("Senha ou email incorreto");
         }
 
-        Usuario usuario = optFindByEmail.get();
-        String createToken = TokenUtil.createToken(usuario);
+        User user = optFindByEmail.get();
+        String createToken = TokenUtil.createToken(user);
         Token token = new Token(createToken);
 
         return ResponseEntity.ok(token);

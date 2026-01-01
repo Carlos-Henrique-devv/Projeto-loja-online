@@ -7,12 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UsuarioDto {
+public class UserDto {
 
     @NotBlank(message = "Nome e obrigatorio")
-    private String nome;
+    private String name;
 
-    private String sobrenome;
+    private String surname;
 
     @NotBlank(message = "UserName e obrigatorio")
     private String username;
@@ -25,17 +25,17 @@ public class UsuarioDto {
     private String email;
 
     @NotBlank(message = "Senha e obrigatoria")
-    private String senha;
+    private String password;
 
     @NotBlank(message = "Telefone e obrigatorio")
-    private String telefone;
+    private String phone;
 
-    public UsuarioDto(String nome, String sobrenome, String username, String email, String senha, String telefone) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+    public UserDto(String name, String surname, String username, String email, String password, String phone) {
+        this.name = name;
+        this.surname = surname;
         this.username = username;
         this.email = email;
-        this.senha = senha;
-        this.telefone = telefone;
+        this.password = password;
+        this.phone = phone;
     }
 }

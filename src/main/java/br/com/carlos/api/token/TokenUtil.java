@@ -1,6 +1,6 @@
 package br.com.carlos.api.token;
 
-import br.com.carlos.api.model.Usuario;
+import br.com.carlos.api.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -16,11 +16,11 @@ public class TokenUtil {
     private static final String EMISSOR = "Carlos Henrique";
 
 
-    public static String createToken(Usuario usuario) {
+    public static String createToken(User user) {
         Key secretKeykey = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
 
         return PREFIX + Jwts.builder()
-                .setSubject(usuario.getEmail())
+                .setSubject(user.getEmail())
                 .setIssuer(EMISSOR)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
                 .signWith(secretKeykey, SignatureAlgorithm.HS256)

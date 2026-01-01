@@ -21,8 +21,8 @@ public class UserAuth {
     @Column(name = "username", length = 100, nullable = false, unique = true)
     private String username;
 
-    @Column(name = "senha", length = 100, nullable = false, unique = false)
-    private String senha;
+    @Column(name = "password", length = 100, nullable = false)
+    private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -35,9 +35,9 @@ public class UserAuth {
     public UserAuth() {
     }
 
-    public UserAuth(String username, String senha, Set<Role> roles) {
+    public UserAuth(String username, String password, Set<Role> roles) {
         this.username = username;
-        this.senha = senha;
+        this.password = password;
         this.roles = roles;
     }
 }
